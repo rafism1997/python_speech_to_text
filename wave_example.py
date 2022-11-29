@@ -23,3 +23,15 @@ frames = obj.readframes(-1)
 print(type(frames),type(frames[0]))
 print(len(frames))
 print(len(frames) / 2)
+
+obj.close()
+
+obj_new = wave.open("patrick_new.wav","wb")
+
+obj_new.setnchannels(1)
+obj_new.setsampwidth(2)
+obj_new.setframerate(1323000.0)
+
+obj_new.writeframes(frames)
+
+obj_new.close()
